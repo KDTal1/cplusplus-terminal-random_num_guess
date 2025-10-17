@@ -16,11 +16,11 @@ It also provides randomized motivational messages each time you guess correctly.
 ---
 
 ## Features
-- Random numbers through "<random>"
+- Random numbers through `<random>`
 - Cross platform clear screen
 - Encouraging messages when number guess is correct!
 - Safe input for non-numeric entries
-- Small delay using "<thread>" and "<chrono>"
+- Small delay using `<thread>` and `<chrono>`
 
 ---
 
