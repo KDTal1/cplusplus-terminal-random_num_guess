@@ -4,6 +4,7 @@ Number Guessing Game!
 Win the game with a total score of 50 to win.
 
 Initial finish: 10/17/2025 - 4:32 PM GMT+8
+Updated: 10/17/2025 - 11:50 PM GMT+8
 */
 
 #include <iostream>
@@ -39,14 +40,14 @@ void clear() { // Clears the screen.
 void nice_messages() {
     string message[] = {
         "Good job!",
-        "You're doing great!",
+        "You're doing great sweaty!",
         "Amazing!",
         "Good guess!",
         "Egg.",
         "Good call.",
         "There is a chance that you get it right again",
         "Right!",
-        "Next number!",
+        "congrations yuo dn it!!",
         "Woah, that's a good guess!"
     };
 
@@ -54,9 +55,10 @@ void nice_messages() {
 }
 
 int main() {
-    int userGuess, programNum, score;
+    int userGuess, programNum, score, tries;
     srand(time(0)); 
     score = 0;
+    tries = 5; // Attempts.
 
     while (score != 50) {
         clear();
@@ -64,6 +66,7 @@ int main() {
         cout << "!!!  NUMBER GUESSING GAME  !!!\nGet to the total score of 50 to win!" << endl;
         cout << string(45, '=') << endl;
         cout << "Current score: " << score << endl;
+        cout << "Current lives: " << tries << endl;
         cout << "Guess what number from 1 - 10 am I thinking right now: ";
         cin >> userGuess;
 
@@ -81,7 +84,17 @@ int main() {
             score++;
         } else {
             cout << string(45, '=') << endl;
-            cout << "Sorry, try again!" << endl; // Tells the user to try again if they failed.
+            
+            if (tries != 1) {
+                cout << "Sorry, try again!" << endl; // Tells the user to try again if they failed.
+                tries--;
+            } else {
+                cout << "Apologies! You ran out of tries! Your score shall now be set to 0." << endl;
+                cout << "Don't worry, your tries will be reset in pity" << endl;
+                this_thread::sleep_for(chrono::seconds(5));
+                score = 0;
+                tries = 5; // Giving mercy to the weak.
+            }
         }
         cout << string(45, '=') << endl;
         cout << "Updated score! It is now " << score << endl;

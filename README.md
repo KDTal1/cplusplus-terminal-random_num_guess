@@ -10,6 +10,7 @@ Each round:
 - You try to guess it.
 - A correct guess increases your score by **1**.
 - The game continues until your score reaches **50**.
+- Do be careful, however. You only get five tries.
 
 It also provides randomized motivational messages each time you guess correctly.
 
